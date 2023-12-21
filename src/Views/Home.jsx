@@ -38,6 +38,7 @@ function Home() {
 
   useEffect(() => {
     if (updatesComplete.current.communities && updatesComplete.current.homes) {
+      console.log(communities,homes)
       if(communities){
         const val = communities
         .map((community, ind) => {
