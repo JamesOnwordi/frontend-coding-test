@@ -38,7 +38,8 @@ function Home() {
 
   useEffect(() => {
     if (updatesComplete.current.communities && updatesComplete.current.homes) {
-      const val = communities
+      if(communities){
+        const val = communities
         .map((community, ind) => {
           const presentHome = homes.find(
             (element) => element.communityId === community.id
@@ -60,9 +61,12 @@ function Home() {
         .sort((a, b) => {
           return a.name[0].localeCompare(b.name[0]);
         });
+        setAll(val);
+        display(val);
+      }
+      
 
-      setAll(val);
-      display(val);
+      
     }
   }, [communities, homes]);
 
