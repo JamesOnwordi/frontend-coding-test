@@ -12,7 +12,7 @@ function Home() {
   const [search, setSearch] = useState([]);
   const [info, setInfo] = useState([]);
   const strings = [
-    "Welcome to Calgary! Home to bustling urban areas and quiet rural neigborhoods alike, the city is divided into more than 184 communities. The Calgary community map is further broken down into quadrants (Northwest, Northeast, Southwest, and Southeast), with eight zones that you can search in. Feel free to explore the beautiful residential communities and park the city has to offer.",
+    "Welcome to Calgary! Home to bustling urban areas and quiet rural neigborhoods alike, the city is divided into more than 184 communities. The Calgary community map is  broken down into quadrants (Northwest, Northeast, Southwest, and Southeast), each offering its unique charm and atmosphere. Discover the diverse residential communities and parks the city has to offer, each providing a distinct feeling and experience. Whether you're seeking the vibrant energy of urban living, the serene tranquility of suburban life, or the peaceful retreat of rural surroundings, Calgary has a community to match your mood and lifestyle. Explore the different vibes and find the perfect place to call home in this dynamic and welcoming city. Feel free to explore the beautiful residential communities and park the city has to offer.",
   ];
 
   useEffect(() => {
@@ -71,6 +71,7 @@ function Home() {
                 image: community.imgUrl,
                 type: presentHome.type,
                 price: presentHome.price,
+                area: presentHome.area,
                 group: community.group,
               };
           })
@@ -109,17 +110,20 @@ function Home() {
                 </div>
                 <div className="m-5">
                   <div>
-                    <p className="text-xl text-blue-300 font-medium">
+                    <p className="text-lg text-blue-400 font-medium">
                       {value.name}
                     </p>
                   </div>
-                  <div className="text-teal-600 italic">
-                    The community of {value.name}, is located in the
-                    {value.area} at the {value.group} part of Calgary with
-                    majority of it's buildings being {value.type}.
+                  <div className=" text-left">
+                    <div className="text-teal-600 text-sm mt-1 mb-1">
+                    The community of {value.name} is situated in the
+                    {" "}{value.group} part of Calgary. It covers an area of {value.area}, with
+                    majority of it's buildings being {value.type}s.
                   </div>
-                  <div className="text-base ">
-                    The average price of homes in {value.name} is: $
+                  </div>
+                  
+                  <div className="text-cyan-800 text-sm">
+                    The average price for a home in {value.name} is: $
                     {value.price.toLocaleString()}
                   </div>
                 </div>

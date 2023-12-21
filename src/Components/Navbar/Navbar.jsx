@@ -12,14 +12,14 @@ function Navbar(props) {
           <img className="h-20" src="assets/logo.png" />
         </div>
         <div className="flex justify-center basis-1/2 sm:basis-1/3 items-center">
-          <div className="invisible sm:visible m-5 p-2 rounded-3xl bg-gray-700 flex justify-center">
+          <div className="invisible sm:visible m-5 group hover:bg-gray-800 p-2 rounded-3xl bg-gray-700 flex justify-center">
             <input
               placeholder="Search a Community"
               value={props.search}
               onFocus={(e) => (e.target.placeholder = "")}
               onBlur={(e) => (e.target.placeholder = "Search a Community")}
               onChange={(e) => props.setSearch(e.target.value)}
-              className="h-7 w-4/5 text-left bg-gray-700 overflow-hidden outline-none cursor-pointer text-white  text-sm "
+              className="h-7 w-4/5 text-left bg-gray-700 group-hover:bg-gray-800 overflow-hidden outline-none cursor-pointer text-white  text-sm "
               type="text"
             />
           </div>
