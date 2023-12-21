@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import Typed from "react-typed";
 import Navbar from "../Components/Navbar/Navbar";
 
 function Home() {
@@ -128,7 +127,7 @@ function Home() {
         {!info && (
           <div>
             <div className="sm:ml-36 sm:mr-36 sm:ml-12 sm:mr-12 border-2 border-black p-4">
-              <Typed strings={strings} typeSpeed={30}></Typed>
+                {strings}
             </div>
           </div>
         )}
